@@ -8,6 +8,7 @@ import spring.*;
 
 @Configuration
 @ComponentScan(basePackages = {"spring"})
+// 스캔 대상 패키지 목록 지정, spring 패키지와 하위 패키지에 속한 클래스를 스캔 대상으로 설정
 public class AppCtx {
 
     /* Component 설정했으므로 설정파일에 빈을 등록해줄 필요가 없음!

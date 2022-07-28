@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
 public class MemberPrinter {
 
@@ -26,13 +27,24 @@ public class MemberPrinter {
         }
     }
 
+
     /*
     @Autowired(required = false)
     public void setDateFormatter(DateTimeFormatter dateTimeFormatter) {
         this.dateTimeFormatter = dateTimeFormatter;
     }
 
+    @Autowired
+    public void setDateFormatter(Optional<DateTimeFormatter> formatterOpt) {
+        if (formatterOpt.isPresent()) {
+            this.dateTimeFormatter = formatterOpt.get();
+        } else {
+            this.dateTimeFormatter = null
+        }
+    }
+
      */
+
     @Autowired
     public void setDateFormatter(@Nullable DateTimeFormatter dateTimeFormatter) {
         this.dateTimeFormatter = dateTimeFormatter;
